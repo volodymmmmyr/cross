@@ -1,0 +1,108 @@
+﻿@model UsModel
+
+<style>
+    .form-container {
+        max-width: 480px;
+        margin: 40px auto;
+        padding: 25px;
+        border-radius: 12px;
+        background-color: #ffffff;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .form-container div {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: #007bff;
+        background-color: #ffffff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+    }
+
+    .error-message {
+        color: #e74c3c;
+        font-size: 0.875rem;
+        margin-top: 5px;
+    }
+
+    button[type="submit"] {
+        display: inline-block;
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<div class="form-container">
+    <form asp-action="Register" method="post">
+        <div>
+            <label asp-for="Username">Username</label>
+            <input asp-for="Username" />
+            <span class="error-message" asp-validation-for="Username"></span>
+        </div>
+        <div>
+            <label asp-for="FullName">Full Name</label>
+            <input asp-for="FullName" />
+            <span class="error-message" asp-validation-for="FullName"></span>
+        </div>
+        <div>
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" type="email" />
+            <span class="error-message" asp-validation-for="Email"></span>
+        </div>
+        <div>
+            <label asp-for="PhoneNumber">Phone Number</label>
+            <input asp-for="PhoneNumber" type="text" />
+            <span class="error-message" asp-validation-for="PhoneNumber"></span>
+        </div>
+        <div>
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" type="password" />
+            <span class="error-message" asp-validation-for="Password"></span>
+        </div>
+        <div>
+            <label asp-for="ConfirmPassword">Confirm Password</label>
+            <input asp-for="ConfirmPassword" type="password" />
+            <span class="error-message" asp-validation-for="ConfirmPassword"></span>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+﻿@model Lab5.Models.UsViewModel
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<!-- Основний контейнер -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Карта профілю -->
+            <div class="card shadow-lg border-0 rounded-lg">
+                <!-- Заголовок карти -->
+                <div class="card-header text-center bg-primary text-white">
+                    <h4 class="mb-0">Welcome, @Model.Username!</h4>
+                </div>
+
+                <!-- Тіло карти з інформацією користувача -->
+                <div class="card-body">
+                    <div class="list-group">
+                        <!-- Ім'я -->
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Full Name:</strong>
+                            <span>@Model.FullName ?? "Not provided"</span>
+                        </div>
+                        <!-- Email -->
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Email:</strong>
+                            <span>@Model.Email ?? "Not provided"</span>
+                        </div>
+                        <!-- Номер телефону -->
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Phone Number:</strong>
+                            <span>@Model.PhoneNumber ?? "Not provided"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer з діями -->
+                <div class="card-footer text-center">
+                    <!-- Кнопка повернення на головну -->
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary mr-3">Back to Home</a>
+                    <!-- Кнопка виходу з профілю -->
+                    <a asp-controller="Account" asp-action="Logout" class="btn btn-outline-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

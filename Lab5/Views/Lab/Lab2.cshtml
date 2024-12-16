@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Lab2";
+}
+
+<h2>Результат</h2>
+
+<form method="post" asp-action="Lab2Run">
+    <label for="inputValue">Введіть вхідні дані:</label>
+    <input type="text" id="inputValue" name="inputValue" />
+
+    <button type="submit">Розрахувати</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <p>
+        <label>Результат: </label>
+        <span>@ViewBag.Result</span>
+    </p>
+}
