@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<PackAsTool>true</PackAsTool>
+	<OutputType>Exe</OutputType>
+	<Version>1.0.5</Version>
+	<Authors>vdidkiv</Authors>
+	<Description>Lab4</Description>
+	<ToolCommandName>Lab4</ToolCommandName>
+	<PackageId>vdidkiv</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1" />
+    <ProjectReference Include="..\ClassLibraryLab4\ClassLibraryLab4.csproj" />
+  </ItemGroup>
+
+</Project>
